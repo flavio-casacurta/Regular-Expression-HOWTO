@@ -82,35 +82,36 @@ O primeiro metacaractere que vamos olhar são os colchetes, ``[`` e ``]``. Eles 
 especificar uma classe de caracteres, que é um conjunto de caracteres que você
 deseja corresponder. Os caracteres podem ser listados individualmente, ou um
 intervalo de caracteres pode ser indicado informando dois caracteres e separando-os por
-um ``'-'``. Por exemplo, ``[abc]`` irá corresponder a qualquer dos caracteres ``a``, ``b``, ``c`` ou, o que
+um ``-``. Por exemplo, ``[abc]`` irá corresponder a qualquer dos caracteres ``a``, ``b``, ``c`` ou, o que
 é o mesmo que ``[a-c]``, que usa um intervalo de expressar o mesmo conjunto de
-caracteres. Se você quiser corresponder apenas letras minúsculas, a RE seria [a-z].
-Metacaracteres não são ativos dentro classes “[ ]”. Por exemplo, [akm$] irá
-corresponder a qualquer um dos caracteres 'a', 'k', 'm', ou '$'; '$' é geralmente um
+caracteres. Se você quiser corresponder apenas letras minúsculas, a RE seria ``[a-z]``.
+Metacaracteres não são ativos dentro classes ``[ ]``. Por exemplo, ``[akm$]`` irá
+corresponder a qualquer um dos caracteres ``a``, ``k``, ``m``, ou ``$``; ``$`` é geralmente um
 metacaractere, mas dentro de uma classe de caracteres ele é despojado de sua natureza
 especial.
 Você pode combinar os caracteres 'não listados' dentro de um classe,
-através de um complemento do conjunto. Isto é indicado através da inclusão de um '^' como o
-primeiro caractere da classe; '^' fora de uma classe de caracteres simplesmente
-corresponder ao caractere '^'. Mas por exemplo, [^5] irá corresponder a qualquer caractere,
-exceto '5'.
-Talvez o metacaractere mais importante é a barra invertida, \. Como as strings literais em
+através de um complemento do conjunto. Isto é indicado através da inclusão de um ``^`` como o
+primeiro caractere da classe; ``^`` fora de uma classe de caracteres simplesmente
+corresponder ao caractere ``^``. Mas por exemplo, ``[^5]`` irá corresponder a qualquer caractere,
+exceto ``5``.
+Talvez o metacaractere mais importante é a barra invertida, ``\``. Como as strings literais em
 Python, a barra invertida pode ser seguida por vários caracteres para sinalizar várias
-sequências especiais. Ela também é usada para "escapar" todos os metacaracteres,
+sequências especiais. Ela também é usada para ``escapar`` todos os metacaracteres,
 e assim, você poder combiná-los em padrões; por exemplo, se você precisa
-fazer correspondência a um [ ou \, você pode precedê-los com uma barra invertida para
-remover seu significado especial: \[ ou \\.
-Algumas das sequências especiais que começam com '\' representam conjuntos
+fazer correspondência a um ``[`` ou ``\``, você pode precedê-los com uma barra invertida para
+remover seu significado especial: ``\[`` ou ``\\``.
+Algumas das sequências especiais que começam com ``\`` representam conjuntos
 predefinidos de caracteres que muitas vezes são úteis, como o conjunto de dígitos, o
-conjunto de letras, ou o conjunto de qualquer coisa que não seja um espaço em branco. As seguintes sequências especiais pré-definidas
-são um subconjunto das disponíveis. As classes
+conjunto de letras, ou o conjunto de qualquer coisa que não seja um espaço em branco.
+As seguintes sequências especiais pré-definidas são um subconjunto das disponíveis. As classes
 equivalentes são para padrões de "byte string" (byte string patterns). Para uma lista completa de
 definições de sequências e classe estendida para os padrões string
 Unicode, consulte a última parte de 'Sintaxe de Expressões Regulares'.
-\d corresponde a qualquer dígito decimal, que é equivalente à classe [0-9].
-\D corresponde a qualquer caractere não-dígito, o que é equivalente à classe [^0-9].
-\s corresponde a qualquer caractere 'espaço-em-branco', o que é equivalente à
-classe [\t\n\r\f\v].
+
+**\d** corresponde a qualquer dígito decimal, que é equivalente à classe ``[0-9]``.
+**\D** corresponde a qualquer caractere não-dígito, o que é equivalente à classe ``[^0-9]``.
+**\s** corresponde a qualquer caractere ``espaço-em-branco``, o que é equivalente à
+classe ``[\t\n\r\f\v]``.
 \S corresponde a qualquer caractere 'não-espaço-branco', o que é equivalente à classe
 [^ \t\n\r\f\v].
 \w corresponde a qualquer caractere alfanumérico, o que é equivalente à classe [azA-Z0-9_].
