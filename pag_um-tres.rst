@@ -4,12 +4,15 @@ Regular Expression HOWTO
 Author:
 -------
 **A.M. Kuchling <amk@amk.ca>**
+
 Site:
 -----
 https://docs.python.org/2/howto/regex.html
+
 Traduzido:
 ----------
 Flávio Augusto Casacurta <flavio@casacurta.com>
+
 Revisado:
 ---------
 Herbert Parentes Fortes Neto <brpacotes@gmail.com>
