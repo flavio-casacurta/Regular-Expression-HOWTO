@@ -15,7 +15,7 @@ Flávio Augusto Casacurta <flavio@casacurta.com>
 
 Revisado:
 ---------
-Herbert Parentes Fortes Neto <brpacotes@gmail.com>
+Herbert Parentes Fortes Neto <hpfn@ig.com.br>
 
 
 Abstrato
