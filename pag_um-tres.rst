@@ -89,7 +89,7 @@ Metacaracteres não são ativos dentro classes ``[ ]``. Por exemplo, ``[akm$]`` 
 corresponder a qualquer um dos caracteres ``a``, ``k``, ``m``, ou ``$``; ``$`` é geralmente um
 metacaractere, mas dentro de uma classe de caracteres ele é despojado de sua natureza
 especial.
-Você pode combinar os caracteres 'não listados' dentro de um classe,
+Você pode combinar os caracteres ``não listados`` dentro de um classe,
 através de um complemento do conjunto. Isto é indicado através da inclusão de um ``^`` como o
 primeiro caractere da classe; ``^`` fora de uma classe de caracteres simplesmente
 corresponder ao caractere ``^``. Mas por exemplo, ``[^5]`` irá corresponder a qualquer caractere,
@@ -108,17 +108,17 @@ equivalentes são para padrões de "byte string" (byte string patterns). Para um
 definições de sequências e classe estendida para os padrões string
 Unicode, consulte a última parte de 'Sintaxe de Expressões Regulares'.
 
-**\\d** corresponde a qualquer dígito decimal, que é equivalente à classe ``[0-9]``.
+**\\d** corresponde a qualquer ``dígito`` decimal, que é equivalente à classe ``[0-9]``.
 
-**\\D** corresponde a qualquer caractere não-dígito, o que é equivalente à classe ``[^0-9]``.
+**\\D** corresponde a qualquer caractere ``não-dígito``, o que é equivalente à classe ``[^0-9]``.
 
 **\\s** corresponde a qualquer caractere ``espaço-em-branco``, o que é equivalente à classe ``[\t\n\r\f\v]``.
 
 **\\S** corresponde a qualquer caractere ``não-espaço-branco``, o que é equivalente à classe ``[^\t\n\r\f\v].``
 
-**\\w** corresponde a qualquer caractere alfanumérico, o que é equivalente à classe ``[azA-Z0-9_]``.
+**\\w** corresponde a qualquer caractere ``alfanumérico``, o que é equivalente à classe ``[azA-Z0-9_]``.
 
-**\\W** Corresponde a qualquer caractere não-alfanumérico, o que é equivalente à classe ``[^a-zA-Z0-9_]``.
+**\\W** Corresponde a qualquer caractere ``não-alfanumérico``, o que é equivalente à classe ``[^a-zA-Z0-9_]``.
 
 Estas sequências podem ser incluídas dentro de uma classe caractere. Por exemplo,
 ``[\s,.]`` É uma classe caractere que irá corresponder a qualquer caractere ``espaço-em-branco``, ou ``,`` ou ``.``.
