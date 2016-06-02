@@ -53,31 +53,32 @@ nenhuma correspondência, ele irá então progressivamente voltar e tentar novam
 RE novamente e novamente. Ele vai retornar até que não tenha
 conseguido nenhum resultado para [bcd]*, e se isso falhar subsequentemente, o motor vai
 concluir que a string não corresponde com o RE de nenhuma maneira.
+
 Outro metacaractere de repetição é o ``+``, que corresponde a uma ou mais vezes. Preste
 muita atenção para a diferença entre ``*`` e ``+``; ``*`` corresponde com zero ou mais vezes, assim, o que quer
 que esteja sendo repetido pode não estar presente, enquanto que ``+`` requer pelo
-menos uma ocorrência. Para usar um exemplo similar, ca+t vai corresponder a cat
-(1 ``a``), caaat (3 ``a``), mas não corresponde com ct.
-Existem mais dois qualificadores de repetição. ? O caractere ponto de interrogação, ``?``, que
+menos uma ocorrência. Para usar um exemplo similar, ``ca+t`` vai corresponder a ``cat``
+``1 a``, ``caaat`` ``3 a``, mas não corresponde com ``ct``.
+
+Existem mais dois qualificadores de repetição. ``?`` O caractere ponto de interrogação, ``?``, que
 corresponde a uma vez ou zero vezes; você pode pensar nisso como a marcação de algo
-sendo opcional. Por exemplo, home-?brew corresponde tanto com homebrew quanto com
-home-brew.
-O qualificador de repetição mais complicado é o {m,n}, em que ``m`` e ``n`` são números
+sendo opcional. Por exemplo, ``home-?brew`` corresponde tanto com ``homebrew`` quanto com ``home-brew``.
+
+O qualificador de repetição mais complicado é o ``{m,n}``, em que ``m`` e ``n`` são números
 inteiros decimais. Esta qualificação significa que deve haver pelo menos ``m`` repetições,
 e no máximo ``n``. Por exemplo, ``a/{1,3}b`` irá corresponder a ``a/b``, ``a//b`` e ``a///b``. Não
 vai corresponder com ``ab``, que não tem barras ou a ``a////b``, que tem quatro.
 Você pode omitir tanto ``m`` quanto ``n``; nesse caso, um valor razoável é assumido para o valor em
-falta. Omitir ``m`` é interpretado como o limite inferior de 0(zero), enquanto omitir ``n``
+falta. Omitir ``m`` é interpretado como o limite inferior de ``0(zero)``, enquanto omitir ``n``
 resulta em um limite superior como o infinito -- na verdade, o limite superior é o limite de 2
 bilhões mencionado anteriormente, mas isso poderia muito bem ser infinito.
 Os leitores de uma inclinação reducionista podem notar que os três outros
-qualificadores podem todos serem expressos utilizando esta notação. {0,} é o mesmo que ``*``,
-{1,} é equivalente a ``+``, e {0,1} é o mesmo que ``?``. É melhor usar ``*``, ``+`` ou ``?`` quando
+qualificadores podem todos serem expressos utilizando esta notação. ``{0,}`` é o mesmo que ``*``,
+``{1,}`` é equivalente a ``+``, e ``{0,1}`` é o mesmo que ``?``. É melhor usar ``*``, ``+`` ou ``?`` quando
 puder, simplesmente porque eles são mais curtos e fáceis de ler.
 
 Usando expressões regulares
-
-¶
+---------------------------
 
 Agora que nós vimos algumas expressões regulares simples, como nós
 realmente as usamos em Python? O módulo re fornece uma interface para o mecanismo
@@ -86,22 +87,23 @@ executar comparações com eles.
 
 
 Compilando Expressões Regulares
-
-¶
+-------------------------------
 
 As expressões regulares são compiladas em objetos padrão, que têm métodos para
 várias operações, tais como a procura por padrões de correspondência ou realizar substituições de
-strings.
+strings.::
 >>>
 >>> import re
->>> p = re.compile(``ab*``)
+>>> p = re.compile('ab*')
 >>> print p
 <_sre.SRE_Pattern object at 0x...>
-re.compile()também aceita flags opcionais como argumentos, utilizados para
+
+``re.compile()`` também aceita flags opcionais como argumentos, utilizados para
 habilitar vários recursos especiais e variações de sintaxe. Nós vamos ver todas as
-configurações disponíveis mais tarde, mas por agora, um único exemplo vai servir:
+configurações disponíveis mais tarde, mas por agora, um único exemplo vai servir::
 >>>
->>> p = re.compile(``ab*``, re.IGNORECASE)
+>>> p = re.compile('ab*', re.IGNORECASE)
+
 A RE é passada para re.compile()como uma string. REs são tratadas como
 strings porque as expressões regulares não são parte do núcleo da linguagem Python,
 e nenhuma sintaxe especial foi criada para expressá-las. (Existem aplicações que não
