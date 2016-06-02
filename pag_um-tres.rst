@@ -108,17 +108,20 @@ equivalentes são para padrões de "byte string" (byte string patterns). Para um
 definições de sequências e classe estendida para os padrões string
 Unicode, consulte a última parte de 'Sintaxe de Expressões Regulares'.
 
-**\d** corresponde a qualquer dígito decimal, que é equivalente à classe ``[0-9]``.
-**\D** corresponde a qualquer caractere não-dígito, o que é equivalente à classe ``[^0-9]``.
-**\s** corresponde a qualquer caractere ``espaço-em-branco``, o que é equivalente à
-classe ``[\t\n\r\f\v]``.
-\S corresponde a qualquer caractere 'não-espaço-branco', o que é equivalente à classe
-[^ \t\n\r\f\v].
-\w corresponde a qualquer caractere alfanumérico, o que é equivalente à classe [azA-Z0-9_].
-\W Corresponde a qualquer caractere não-alfanumérico, o que é equivalente à classe
-[^a-zA-Z0-9_].
+**\\d** corresponde a qualquer dígito decimal, que é equivalente à classe ``[0-9]``.
+
+**\\D** corresponde a qualquer caractere não-dígito, o que é equivalente à classe ``[^0-9]``.
+
+**\\s** corresponde a qualquer caractere ``espaço-em-branco``, o que é equivalente à classe ``[\t\n\r\f\v]``.
+
+**\\S** corresponde a qualquer caractere ``não-espaço-branco``, o que é equivalente à classe ``[^\t\n\r\f\v].``
+
+**\\w** corresponde a qualquer caractere alfanumérico, o que é equivalente à classe ``[azA-Z0-9_]``.
+
+**\\W** Corresponde a qualquer caractere não-alfanumérico, o que é equivalente à classe ``[^a-zA-Z0-9_]``.
+
 Estas sequências podem ser incluídas dentro de uma classe caractere. Por exemplo,
-[\s,.] É uma classe caractere que irá corresponder a qualquer caractere 'espaço-em-branco', ou ',' ou '.'.
-O metacaractere final desta seção é o '.'. Ele encontra tudo, exceto um caractere
-'nova linha', e existe um modo alternativo (re.DOTALL), onde ele irá corresponder
-até mesmo a um caractere 'nova linha'. '.' é , geralmente, usado quando você quer corresponder com "qualquer caractere".
+``[\s,.]`` É uma classe caractere que irá corresponder a qualquer caractere ``espaço-em-branco``, ou ``,`` ou ``.``.
+O metacaractere final desta seção é o ``.``. Ele encontra tudo, exceto um caractere ``nova linha``, e existe um modo
+alternativo (re.DOTALL), onde ele irá corresponderaté mesmo a um caractere ``nova linha``. ``.`` é , geralmente, usado
+quando você quer corresponder com ``qualquer caractere``.
