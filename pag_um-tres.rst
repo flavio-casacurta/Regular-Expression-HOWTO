@@ -26,7 +26,7 @@ correspondente na Biblioteca de Referência.
 
 Introdução
 ----------
-O módulo *re* foi adicionado no Python 1.5, e provê padrões de expressões regulares
+O módulo ``re`` foi adicionado no Python 1.5, e provê padrões de expressões regulares
 no “estilo Perl”. As versões anteriores do Python vieram com o módulo regex, que
 forneceu os padrões “estilo Emacs”. O módulo regex foi completamente removido
 do Python 2.5.
@@ -50,16 +50,12 @@ A linguagem de expressão regular é relativamente pequena e restrita, por isso 
 todas as tarefas de processamento de strings possíveis podem ser feitas usando
 expressões regulares. Existem também tarefas que podem ser feitas com expressões
 regulares, mas as expressões acabam por ser tornar muito complicadas. Nestes casos, pode
-
-
 ser melhor para você escrever um código Python para fazer o processamento;
 embora um código Python seja mais lento do que uma expressão regular elaborada,
 ele provavelmente será mais compreensível.
 
 Padrões Simples
-
-¶
-
+---------------
 Vamos começar por aprender sobre as expressões regulares mais simples possíveis.
 Como as expressões regulares são usadas para operar em strings, vamos começar
 com a tarefa mais comum: de correspondência caracteres.
@@ -67,19 +63,21 @@ Para uma explicação detalhada da ciência da computação referente a express�
 regulares (autômatos finitos determinísticos e não-determinístico), você pode consultar
 a praticamente qualquer livro sobre a escrita de compiladores.
 
-Caracteres Correspondentes¶
+Caracteres Correspondentes
+--------------------------
 A maioria das letras e caracteres simplesmente irão corresponder entre si. Por exemplo, a expressão regular 'teste'
-irá combinar com a string 'teste' totalmente. (Você pode
-habilitar o modo de maiúsculas e minúsculas que faria com que a RE corresponder com
-Test ou TEST também; veremos mais sobre isso mais adiante.)
+irá combinar com a string 'teste' totalmente. (Você pode habilitar o modo de maiúsculas e minúsculas que faria com que
+a RE corresponder com Test ou TEST também; veremos mais sobre isso mais adiante.)
 Há exceções a essa regra, alguns caracteres são metacaracteres especiais, e não se
 correspondem. Em vez disso, eles sinalizam que alguma coisa fora do normal deve
 ser correspondida, ou eles afetam outras partes da RE, repetindo-as ou alterando seus
 significados. Grande parte deste documento é dedicada à discussão de vários metacaracteres
 e o que eles fazem.
 Aqui está a lista completa dos metacaracteres; seus significados serão discutidos ao
-longo deste documento.
+longo deste documento.::
+
 . ^ $ * + ? { } [ ] \ | ( )
+
 O primeiro metacaractere que vamos olhar são os colchetes, [ e ]. Eles são usados para
 especificar uma classe de caracteres, que é um conjunto de caracteres que você
 deseja corresponder. Os caracteres podem ser listados individualmente, ou um
@@ -89,8 +87,6 @@ um '-'. Por exemplo, [abc] irá corresponder a qualquer dos caracteres a, b, c o
 caracteres. Se você quiser corresponder apenas letras minúsculas, a RE seria [a-z].
 Metacaracteres não são ativos dentro classes “[ ]”. Por exemplo, [akm$] irá
 corresponder a qualquer um dos caracteres 'a', 'k', 'm', ou '$'; '$' é geralmente um
-
-
 metacaractere, mas dentro de uma classe de caracteres ele é despojado de sua natureza
 especial.
 Você pode combinar os caracteres 'não listados' dentro de um classe,
