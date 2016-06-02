@@ -92,6 +92,7 @@ Compilando Expressões Regulares
 As expressões regulares são compiladas em objetos padrão, que têm métodos para
 várias operações, tais como a procura por padrões de correspondência ou realizar substituições de
 strings.::
+
 >>>
 >>> import re
 >>> p = re.compile('ab*')
@@ -101,14 +102,15 @@ strings.::
 ``re.compile()`` também aceita flags opcionais como argumentos, utilizados para
 habilitar vários recursos especiais e variações de sintaxe. Nós vamos ver todas as
 configurações disponíveis mais tarde, mas por agora, um único exemplo vai servir::
+
 >>>
 >>> p = re.compile('ab*', re.IGNORECASE)
 
-A RE é passada para re.compile()como uma string. REs são tratadas como
+A RE é passada para ``re.compile()`` como uma string. REs são tratadas como
 strings porque as expressões regulares não são parte do núcleo da linguagem Python,
 e nenhuma sintaxe especial foi criada para expressá-las. (Existem aplicações que não
 necessitam de REs nenhuma, por isso não há necessidade de inchar a especificação
-da linguagem, incluindo-as.) Em vez disso, o módulo re é simplesmente um módulo
+da linguagem, incluindo-as.) Em vez disso, o módulo ``re`` é simplesmente um módulo
 de extensão C incluído no Python, assim como os módulos de socket ou zlib.
 Colocando REs em strings mantém a linguagem Python mais simples, mas tem uma
 desvantagem, que é o tema da próxima seção.
