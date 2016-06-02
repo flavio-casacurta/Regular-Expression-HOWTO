@@ -78,12 +78,12 @@ longo deste documento.::
 
 . ^ $ * + ? { } [ ] \ | ( )
 
-O primeiro metacaractere que vamos olhar são os colchetes, [ e ]. Eles são usados para
+O primeiro metacaractere que vamos olhar são os colchetes, ``[`` e ``]``. Eles são usados para
 especificar uma classe de caracteres, que é um conjunto de caracteres que você
 deseja corresponder. Os caracteres podem ser listados individualmente, ou um
 intervalo de caracteres pode ser indicado informando dois caracteres e separando-os por
-um '-'. Por exemplo, [abc] irá corresponder a qualquer dos caracteres a, b, c ou, o que
-é o mesmo que [a-c], que usa um intervalo de expressar o mesmo conjunto de
+um ``'-'``. Por exemplo, ``[abc]`` irá corresponder a qualquer dos caracteres ``a``, ``b``, ``c`` ou, o que
+é o mesmo que ``[a-c]``, que usa um intervalo de expressar o mesmo conjunto de
 caracteres. Se você quiser corresponder apenas letras minúsculas, a RE seria [a-z].
 Metacaracteres não são ativos dentro classes “[ ]”. Por exemplo, [akm$] irá
 corresponder a qualquer um dos caracteres 'a', 'k', 'm', ou '$'; '$' é geralmente um
