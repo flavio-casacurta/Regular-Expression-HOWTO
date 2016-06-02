@@ -65,14 +65,15 @@ a praticamente qualquer livro sobre a escrita de compiladores.
 
 Caracteres Correspondentes
 --------------------------
-A maioria das letras e caracteres simplesmente irão corresponder entre si. Por exemplo, a expressão regular 'teste'
-irá combinar com a string 'teste' totalmente. (Você pode habilitar o modo de maiúsculas e minúsculas que faria com que
-a RE corresponder com Test ou TEST também; veremos mais sobre isso mais adiante.)
+A maioria das letras e caracteres simplesmente irão corresponder entre si. Por exemplo, a expressão regular ``teste``
+irá combinar com a string ``teste`` totalmente. (Você pode habilitar o modo de maiúsculas e minúsculas que faria com que
+a RE corresponder com ``Test`` ou ``TEST`` também; veremos mais sobre isso mais adiante.)
 Há exceções a essa regra, alguns caracteres são metacaracteres especiais, e não se
 correspondem. Em vez disso, eles sinalizam que alguma coisa fora do normal deve
 ser correspondida, ou eles afetam outras partes da RE, repetindo-as ou alterando seus
 significados. Grande parte deste documento é dedicada à discussão de vários metacaracteres
 e o que eles fazem.
+
 Aqui está a lista completa dos metacaracteres; seus significados serão discutidos ao
 longo deste documento.::
 
