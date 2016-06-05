@@ -83,11 +83,11 @@ Este HOWTO usa o interpretador Python padrão para seus exemplos. Primeiro, exec
 modulo ``re``, e compile uma RE
 
 >>>
-... Python 2.7.10 (default, May 23 2015, 09:44:00) [MSC v.1500 64 bit
+Python 2.7.10 (default, May 23 2015, 09:44:00) [MSC v.1500 64 bit
 >>> import re
 >>> p = re.compile('[a-z]+')
 >>> p
-... <_sre.SRE_Pattern object at 0x...>
+<_sre.SRE_Pattern object at 0x...>
 >>>
 
 Agora, você pode tentar corresponder várias strings com a RE [a-z]+. Mas uma string
@@ -98,8 +98,8 @@ resultado de ``match()`` para deixar isso claro.
 >>>
 >>> p.match("")
 >>> print p.match("")
-... None
->>>
+None
+
 
 Agora, vamos experimentá-la em uma string que ela deve corresponder, como tempo.
 Neste caso, match() irá retornar um MatchObject, assim que você deve armazenar
