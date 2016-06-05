@@ -239,7 +239,7 @@ strings.::
 >>> import re
 >>> p = re.compile('ab*')
 >>> print p
-...<_sre.SRE_Pattern object at 0x...>
+<_sre.SRE_Pattern object at 0x...>
 
 ``re.compile()`` também aceita flags opcionais como argumentos, utilizados para
 habilitar vários recursos especiais e variações de sintaxe. Nós vamos ver todas as
