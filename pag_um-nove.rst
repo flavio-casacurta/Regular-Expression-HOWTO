@@ -362,7 +362,7 @@ None
 
 
 Agora, vamos experimentá-la em uma string que ela deve corresponder, como ``tempo``.
-Neste caso, match() irá retornar um MatchObject, assim que você deve armazenar
+Neste caso, ``match()`` irá retornar um ``MatchObject``, assim que você deve armazenar
 o resultado em uma variável para uso posterior.
 
 >>>
