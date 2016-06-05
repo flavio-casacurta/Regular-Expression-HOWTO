@@ -108,31 +108,37 @@ o resultado em uma variável para uso posterior.
 >>>
 >>> m = p.match('tempo')
 >>> print m
-... <_sre.SRE_Match object at 0x...>
+<_sre.SRE_Match object at 0x...>
 >>>
 
 Agora você pode consultar o MatchObject para obter informações sobre a string
 correspondente. Instâncias do MatchObject também tem vários métodos e atributos;
 os mais importantes são os seguintes:
 
-Método/Atributo     Propósito
-group()             Retorna a string que corresponde com a RE
-start()             Retorna a posição inicial da string correspondente
-end()               Retorna a posição final da string correspondente
-span()              Retorna uma tupla contendo as posições (inicial, final) da
-                    string combinada
++-------------------+----------------------------------------------------------------------------------+
+|**Método/Atributo**|   **Propósito**                                                                  |
++-------------------+----------------------------------------------------------------------------------+
+|group()            |Retorna a string que corresponde com a RE |
++-------------------+----------------------------------------------------------------------------------+
+|start()            |Retorna a posição inicial da string correspondente |
++-------------------+----------------------------------------------------------------------------------+
+|end()              |Retorna a posição final da string correspondente |
++-------------------+----------------------------------------------------------------------------------+
+|span()             |Retorna uma tupla contendo as posições (inicial, final) da string combinada |
++-------------------+----------------------------------------------------------------------------------+
 
 Experimentando estes métodos teremos seus significado esclarecidos:
+
 >>>
 >>> m.group()
-``tempo``
+'tempo'
 >>> m.start(), m.end()
 (0, 5)
 >>> m.span()
 (0, 5)
 
-group() retorna a substring correspondeu com a RE. start()e end() retornam
-os índices inicial e o final da substring correspondente. span()retorna tanto os índices
-inicial e final em uma única tupla. Como o método match() somente verifica se a RE
-corresponde com o início de uma string, start() será sempre zero. No entanto, o
+``group()`` retorna a substring correspondeu com a RE. ``start()`` e ``end()`` retornam
+os índices inicial e o final da substring correspondente. ``span()`` retorna tanto os índices
+inicial e final em uma única tupla. Como o método ``match()`` somente verifica se a RE
+corresponde com o início de uma string, ``start()`` será sempre ``zero``. No entanto, o
 
