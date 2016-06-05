@@ -82,23 +82,24 @@ interativa para desenvolvimento e teste de padrões RE.
 Este HOWTO usa o interpretador Python padrão para seus exemplos. Primeiro, execute o interpretador Python, importe o
 modulo ``re``, e compile uma RE
 
-::
-Python 2.7.10 (default, May 23 2015, 09:44:00) [MSC v.1500 64 bit
-::
+>>>
+... Python 2.7.10 (default, May 23 2015, 09:44:00) [MSC v.1500 64 bit
 >>> import re
 >>> p = re.compile('[a-z]+')
 >>> p
-::
-<_sre.SRE_Pattern object at 0x...>
+... <_sre.SRE_Pattern object at 0x...>
+>>>
 
 Agora, você pode tentar corresponder várias strings com a RE [a-z]+. Mas uma string
-vazia não deveria corresponder com nada, desde que ``+`` significa ``uma ou mais repetições``. ``match()v deve retornar
+vazia não deveria corresponder com nada, desde que ``+`` significa ``uma ou mais repetições``. ``match()`` deve retornar
 ``None`` neste caso, o que fará com que o interpretador não imprima nenhuma saída. Você pode imprimir explicitamente o
-resultado de ``match()`` para deixar isso claro.::
+resultado de ``match()`` para deixar isso claro.
+
 >>>
 >>> p.match("")
 >>> print p.match("")
-None
+... None
+>>>
 
 Agora, vamos experimentá-la em uma string que ela deve corresponder, como tempo.
 Neste caso, match() irá retornar um MatchObject, assim que você deve armazenar
@@ -107,7 +108,8 @@ o resultado em uma variável para uso posterior.
 >>>
 >>> m = p.match('tempo')
 >>> print m
-<_sre.SRE_Match object at 0x...>
+... <_sre.SRE_Match object at 0x...>
+>>>
 
 Agora você pode consultar o MatchObject para obter informações sobre a string
 correspondente. Instâncias do MatchObject também tem vários métodos e atributos;
