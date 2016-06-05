@@ -372,19 +372,19 @@ o resultado em uma variável para uso posterior.
 >>>
 
 Agora você pode consultar o MatchObject para obter informações sobre a string
-correspondente. Instâncias do MatchObject também tem vários métodos e atributos;
+correspondente. Instâncias do ``MatchObject`` também tem vários métodos e atributos;
 os mais importantes são os seguintes:
 
 +-------------------+----------------------------------------------------------------------------------+
 |**Método/Atributo**|   **Propósito**                                                                  |
 +-------------------+----------------------------------------------------------------------------------+
-|group()            |Retorna a string que corresponde com a RE |
+|group()            |Retorna a string que corresponde com a RE                                         |
 +-------------------+----------------------------------------------------------------------------------+
-|start()            |Retorna a posição inicial da string correspondente |
+|start()            |Retorna a posição inicial da string correspondente                                |
 +-------------------+----------------------------------------------------------------------------------+
-|end()              |Retorna a posição final da string correspondente |
+|end()              |Retorna a posição final da string correspondente                                  |
 +-------------------+----------------------------------------------------------------------------------+
-|span()             |Retorna uma tupla contendo as posições (inicial, final) da string combinada |
+|span()             |Retorna uma tupla contendo as posições (inicial, final) da string combinada       |
 +-------------------+----------------------------------------------------------------------------------+
 
 Experimentando estes métodos teremos seus significado esclarecidos:
