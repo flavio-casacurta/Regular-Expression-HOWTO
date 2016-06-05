@@ -39,58 +39,59 @@ se prefixada com ``r``, então ``r"\n"`` é uma string de dois caracteres conten
 expressões regulares, muitas vezes, são escritas no código Python usando esta
 notação de string crua (raw).
 
-+---------------+-------------+
-|String Regular | String Crua |
-+---------------+-------------+
-|"ab*"          | r"ab*"      |
-+---------------+-------------+
-|"\\\\section"  | r"\\section"|
-+---------------+-------------+
-|"\\w+\\s+\\1"  | r"\w+\s+\1" |
-+---------------+-------------+
++-------------------+-----------------+
+|**String Regular** | **String Crua** |
++-------------------+-----------------+
+|"ab*"              | r"ab*"          |
++-------------------+-----------------+
+|"\\\\\\\\section"  | r"\\\\section"  |
++-------------------+-----------------+
+|"\\\\w+\\\\s+\\1"  | r"\\w+\\s+\\1"  |
++-------------------+-----------------+
 
+Executando Comparações
+----------------------
 
-Executando Comparações¶
 Uma vez que você tem um objeto que representa uma expressão regular compilada, o
 que você faz com ele? Objetos padrão têm vários métodos e atributos. Apenas os
-mais significativos serão vistos aqui; consulte a documentação do módulo re para uma lista
+mais significativos serão vistos aqui; consulte a documentação do módulo ``re`` para uma lista
 completa.
 
-Método/Atributo    Propósito
-match()            Determina se a RE combina com o início da string.
-search()           Varre toda a string, procurando qualquer local onde esta RE
-                   tem correspondência.
-findall()          Encontra todas as substrings onde a RE corresponde, e
-                   as retorna como uma lista.
-finditer()         Encontra todas as substrings onde a RE corresponde, e
-                   as retorna como um iterator.
++-------------------+----------------------------------------------------------------------------------+
+|**Método/Atributo**|   **Propósito**                                                                  |
++-------------------+----------------------------------------------------------------------------------+
+|match()            |Determina se a RE combina com o início da string.                                 |
++-------------------+----------------------------------------------------------------------------------+
+|search()           |Varre toda a string, procurando qualquer local onde esta RE tem correspondência.  |
++-------------------+----------------------------------------------------------------------------------+
+|findall()          |Encontra todas as substrings onde a RE corresponde, e as retorna como uma lista.  |
++-------------------+----------------------------------------------------------------------------------+
+|finditer()         |Encontra todas as substrings onde a RE corresponde, e as retorna como um iterator.|
++-------------------+----------------------------------------------------------------------------------+
 
-match() e search() retornam None se não existir nenhuma correspondência
-encontrada. Se tiveram sucesso, uma instância de MatchObject é retornada,
-contendo informações sobre a correspondência: onde ela começa e termina, a
+``match()`` e ``search()`` retornam ``None`` se não existir nenhuma correspondência encontrada. Se tiveram sucesso,
+uma instância de ``MatchObject`` é retornada, contendo informações sobre a correspondência: onde ela começa e termina, a
 substring com a qual ela teve correspondência, e mais.
-Você pode aprender sobre isto experimentando interativamente o
-módulo re. Se você tiver o Tkinter disponível, você pode também querer dar uma olhada
-em Tools/scripts/redemo.py, um programa de demonstração incluído na
-distribuição Python. Ele permite você entrar com REs e strings, e exibe se a RE
-tem correspondência ou falha. redemo.py pode ser bastante útil quando se tenta
-depurar uma RE complicada. Phil Schwartz’s Kodos é também uma
-ferramenta interativa para desenvolvimento e teste de padrões RE.
-Este HOWTO usa o interpretador Python padrão para seus exemplos. Primeiro,
-execute o interpretador Python, importe o modulo re, e compile uma RE:
+
+Você pode aprender sobre isto experimentando interativamente o módulo ``re``. Se você tiver o Tkinter disponível, você
+pode também querer dar uma olhada em ``Tools/scripts/redemo.py``, um programa de demonstração incluído na
+distribuição Python. Ele permite você entrar com REs e strings, e exibe se a RE tem correspondência ou falha. ``redemo.py``
+pode ser bastante útil quando se tenta depurar uma RE complicada. Phil Schwartz’s ``Kodos`` é também uma ferramenta
+interativa para desenvolvimento e teste de padrões RE.
+
+Este HOWTO usa o interpretador Python padrão para seus exemplos. Primeiro, execute o interpretador Python, importe o
+modulo ``re``, e compile uma RE::
+
 Python 2.7.10 (default, May 23 2015, 09:44:00) [MSC v.1500 64 bit
 >>> import re
->>> p = re.compile(``[a-z]+``)
+>>> p = re.compile('[a-z]+')
 >>> p
 <_sre.SRE_Pattern object at 0x...>
 
 Agora, você pode tentar corresponder várias strings com a RE [a-z]+. Mas uma string
-vazia não deveria corresponder com nada, desde que ``+`` significa ``uma ou
-mais repetições``. match() deve retornar None neste caso, o que fará com que o
-
-
-interpretador não imprima nenhuma saída. Você pode imprimir explicitamente o
-resultado de match() para deixar isso claro.
+vazia não deveria corresponder com nada, desde que ``+`` significa ``uma ou mais repetições``. ``match()v deve retornar
+``None`` neste caso, o que fará com que o interpretador não imprima nenhuma saída. Você pode imprimir explicitamente o
+resultado de ``match()`` para deixar isso claro.::
 >>>
 >>> p.match("")
 >>> print p.match("")
@@ -101,7 +102,7 @@ Neste caso, match() irá retornar um MatchObject, assim que você deve armazenar
 o resultado em uma variável para uso posterior.
 
 >>>
->>> m = p.match(``tempo``)
+>>> m = p.match('tempo')
 >>> print m
 <_sre.SRE_Match object at 0x...>
 
