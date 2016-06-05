@@ -16,15 +16,15 @@ passada para ``re.compile()`` deve ser ``\\section``. No entanto, para expressar
 como uma string literal Python, ambas as barras invertidas devem ser precedidas com uma barra invertida
 novamente.
 
-+-----------+----------------------------------------------------------------+
-|Caracteres | Etapa                                                          |
-+-----------+----------------------------------------------------------------+
-|\section   | string de texto a ser correspondida                            |
-+-----------+----------------------------------------------------------------+
-|\\section  | preceder com barra invertida para re.compile()                 |
-+-----------+----------------------------------------------------------------+
-|\\\\section| barras invertidas precedidas novamente para uma string literal |
-+-----------+----------------------------------------------------------------+
++---------------+----------------------------------------------------------------+
+|**Caracteres** | **Etapa**                                                      |
++---------------+----------------------------------------------------------------+
+|\\section      | string de texto a ser correspondida                            |
++---------------+----------------------------------------------------------------+
+|\\\\section    | preceder com barra invertida para re.compile()                 |
++---------------+----------------------------------------------------------------+
+|\\\\\\\\section| barras invertidas precedidas novamente para uma string literal |
++---------------+----------------------------------------------------------------+
 
 Em suma, para corresponder com uma barra invertida literal, tem de se escrever ``\\\\``
 como a string da RE, porque a expressão regular deve ser ``\\``, e cada barra invertida
