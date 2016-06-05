@@ -369,7 +369,6 @@ o resultado em uma variável para uso posterior.
 >>> m = p.match('tempo')
 >>> print m
 <_sre.SRE_Match object at 0x...>
->>>
 
 Agora você pode consultar o MatchObject para obter informações sobre a string
 correspondente. Instâncias do ``MatchObject`` também tem vários métodos e atributos;
