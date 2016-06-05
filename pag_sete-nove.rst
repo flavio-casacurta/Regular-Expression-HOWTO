@@ -80,12 +80,15 @@ pode ser bastante útil quando se tenta depurar uma RE complicada. Phil Schwartz
 interativa para desenvolvimento e teste de padrões RE.
 
 Este HOWTO usa o interpretador Python padrão para seus exemplos. Primeiro, execute o interpretador Python, importe o
-modulo ``re``, e compile uma RE::
+modulo ``re``, e compile uma RE
 
+::
 Python 2.7.10 (default, May 23 2015, 09:44:00) [MSC v.1500 64 bit
+::
 >>> import re
 >>> p = re.compile('[a-z]+')
 >>> p
+::
 <_sre.SRE_Pattern object at 0x...>
 
 Agora, você pode tentar corresponder várias strings com a RE [a-z]+. Mas uma string
