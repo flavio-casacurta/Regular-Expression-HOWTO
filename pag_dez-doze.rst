@@ -1,6 +1,4 @@
-﻿
-
-método ``search()`` dos objetos padrão, varre toda a string, de modo que a substring correspondente
+﻿método ``search()`` dos objetos padrão, varre toda a string, de modo que a substring correspondente
 pode não iniciar em zero nesse caso.
 
 >>>
