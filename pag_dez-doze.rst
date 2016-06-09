@@ -74,14 +74,13 @@ mais convenientes. Se o programa contém uma grande quantidade de expressões
 regulares, ou reutiliza as mesmas em vários locais, então pode valer a pena 
 recolher todas as definições em um lugar, em uma seção de código que compila todas
 as REs antes do uso. Para dar um exemplo da biblioteca padrão, aqui está um extrato
-de ``xmllib.py``
+de ``xmllib.py``:
 
-::
-
-ref = re.compile( ... )
-entityref = re.compile( ... )
-charref = re.compile( ... )
-starttagopen = re.compile( ... )
+>>>
+>>> ref = re.compile( ... )
+>>> entityref = re.compile( ... )
+>>> charref = re.compile( ... )
+>>> starttagopen = re.compile( ... )
 
 Eu geralmente prefiro trabalhar com o objeto compilado, mesmo para usos de
 uma só vez, mas poucas pessoas serão tão puristas sobre isso como eu
@@ -91,7 +90,7 @@ Flags de Compilação
 -------------------
 
 Flags de compilação permitem modificar alguns aspectos de como as expressões
-regulares funcionam. Flags estão disponíveis no módulo ``rev sob dois nomes, um
+regulares funcionam. Flags estão disponíveis no módulo ``rev`` sob dois nomes, um
 nome longo, tal como ``IGNORECASE`` e um curto, na forma de uma letra, como ``I``. (Se você
 estiver familiarizado com o padrão dos modificadores do Perl, o nome curto
 usa as mesmas letras; o forma abreviada de ``re.VERBOSE`` é ``re.X``, por exemplo)
@@ -116,7 +115,7 @@ de cada uma.
 |UNICODE, U	   |Faz de uma letra precedida pela barra invertida ('\') tal como \w, \b \s e \d dependente da base de dados de caracteres Unicode. |
 +--------------+---------------------------------------------------------------------------------------------------------------------------------+
 
-**I**
+**I**\n
 **IGNORECASE**
 Executa a correspondência com maiúsculas e minúsculas; classe de caracteres e
 strings literais irão corresponder com letras ignorando serem maiúsculas ou minúsculas. Por exemplo, ``[A-Z]`` irá
@@ -126,7 +125,7 @@ flag ``LOCALE``.
 
 **L**
 **LOCALE**
-Faz ``\w, \W, \b, e \B``, dependentes do idioma corrente. ``Localev é um recurso da biblioteca C com o objetivo de ajudar na
+Faz ``\w, \W, \b, e \B``, dependentes do idioma corrente. ``Locale`` é um recurso da biblioteca C com o objetivo de ajudar na
 criação de programas que levam em conta as diferenças linguísticas. Por exemplo, se você está processando um texto em
 francês, que você gostaria de ser capaz de escrever ``\w+`` para corresponder com palavras, mas ``\w`` corresponde apenas com a
 classe de caracteres ``[A-Za-z]``; ele não vai corresponder com ``é`` ou ``ç``. Se o sistema estiver configurado corretamente e
