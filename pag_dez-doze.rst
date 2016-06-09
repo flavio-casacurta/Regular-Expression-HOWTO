@@ -101,7 +101,7 @@ Aqui está uma tabela das flags disponíveis, seguida por uma explicação mais 
 de cada uma.
 
 +--------------+----------------------------------------------------------------------------------------+
-|**Flag**   |**Significado**                                                                         |
+|**Flag**      |**Significado**                                                                         |
 +==============+========================================================================================+
 |DOTALL, S     |Faz o '.' corresponder a qualquer caractere, incluindo novas linhas                     |
 +--------------+----------------------------------------------------------------------------------------+
