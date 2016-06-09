@@ -115,7 +115,8 @@ de cada uma.
 |UNICODE, U	   |Faz de uma letra precedida pela barra invertida ('\') tal como \w, \b \s e \d dependente da base de dados de caracteres Unicode. |
 +--------------+---------------------------------------------------------------------------------------------------------------------------------+
 
-**I**\n
+**I**
+
 **IGNORECASE**
 Executa a correspondência com maiúsculas e minúsculas; classe de caracteres e
 strings literais irão corresponder com letras ignorando serem maiúsculas ou minúsculas. Por exemplo, ``[A-Z]`` irá
@@ -124,15 +125,17 @@ corresponder com letras minúsculas também, e ``Spam`` irá corresponder com ``
 flag ``LOCALE``.
 
 **L**
+
 **LOCALE**
 Faz ``\w, \W, \b, e \B``, dependentes do idioma corrente. ``Locale`` é um recurso da biblioteca C com o objetivo de ajudar na
 criação de programas que levam em conta as diferenças linguísticas. Por exemplo, se você está processando um texto em
 francês, que você gostaria de ser capaz de escrever ``\w+`` para corresponder com palavras, mas ``\w`` corresponde apenas com a
 classe de caracteres ``[A-Za-z]``; ele não vai corresponder com ``é`` ou ``ç``. Se o sistema estiver configurado corretamente e
 o idioma francês estiver selecionado, determinadas funções C vão dizer ao programa que ``é`` também deve ser considerada
-como uma letra. Definir a flag ``LOCALEv no momento de compilar uma expressão regular fará com que o objeto compilado resultante
+como uma letra. Definir a flag ``LOCALE``` no momento de compilar uma expressão regular fará com que o objeto compilado resultante
 use essas funções de C para ``\w``; isso causa lentidão, mas também permite que ``\w+`` corresponda com as palavras em francês,
 caso seja necessário.
 
 **M**
+
 **MULTILINE**
