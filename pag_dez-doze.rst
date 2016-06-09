@@ -98,7 +98,7 @@ Várias flags podem ser especificadas como um vetor intercalado por ``OU(|)``; `
 ``I`` e ``M``, por exemplo.
 
 Aqui está uma tabela das flags disponíveis, seguida por uma explicação mais detalhada
-de cada uma.
+de cada uma:
 
 +--------------+----------------------------------------------------------------------------------------+
 |**Flag**      |**Significado**                                                                         |
