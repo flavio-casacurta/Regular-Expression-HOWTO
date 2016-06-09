@@ -101,19 +101,19 @@ Aqui está uma tabela das flags disponíveis, seguida por uma explicação mais 
 de cada uma.
 
 +--------------+----------------------------------------------------------------------------------------+
-|**Flag**	   |**Significado**                                                                         |
+|**Flag**      |**Significado**                                                                         |
 +==============+========================================================================================+
-|DOTALL, S	   |Faz o '.' corresponder a qualquer caractere, incluindo novas linhas                     |
+|DOTALL, S     |Faz o '.' corresponder a qualquer caractere, incluindo novas linhas                     |
 +--------------+----------------------------------------------------------------------------------------+
 |IGNORECASE, I |Faz correspondências com maiúsculas e minúsculas                                        |
 +--------------+----------------------------------------------------------------------------------------+
-|LOCALE, L	   |Faz uma correspondência de acordo com o idioma                                          |
+|LOCALE, L     |Faz uma correspondência de acordo com o idioma                                          |
 +--------------+----------------------------------------------------------------------------------------+
 |MULTILINE, M  |Correspondência multi-linha, afetando ^ e $                                             |
 +--------------+----------------------------------------------------------------------------------------+
-|VERBOSE, X	   |Habilita REs detalhadas, que podem ser organizadas de forma mais clara e compreensível. |
+|VERBOSE, X    |Habilita REs detalhadas, que podem ser organizadas de forma mais clara e compreensível. |
 +--------------+----------------------------------------------------------------------------------------+
-|UNICODE, U	   |Faz de uma letra precedida pela barra invertida ('\') tal como \w, \b \s e \d dependente|
+|UNICODE, U    |Faz de uma letra precedida pela barra invertida ('\') tal como \w, \b \s e \d dependente|
 |              |                                                 da base de dados de caracteres Unicode.|
 +--------------+----------------------------------------------------------------------------------------+
 
