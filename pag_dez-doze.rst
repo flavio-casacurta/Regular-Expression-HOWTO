@@ -102,7 +102,7 @@ de cada uma.
 
 +--------------+----------------------------------------------------------------------------------------+
 |**Flag**	   |**Significado**                                                                         |
-+--------------+----------------------------------------------------------------------------------------+
++==============+========================================================================================+
 |DOTALL, S	   |Faz o '.' corresponder a qualquer caractere, incluindo novas linhas                     |
 +--------------+----------------------------------------------------------------------------------------+
 |IGNORECASE, I |Faz correspondências com maiúsculas e minúsculas                                        |
@@ -114,8 +114,7 @@ de cada uma.
 |VERBOSE, X	   |Habilita REs detalhadas, que podem ser organizadas de forma mais clara e compreensível. |
 +--------------+----------------------------------------------------------------------------------------+
 |UNICODE, U	   |Faz de uma letra precedida pela barra invertida ('\') tal como \w, \b \s e \d dependente|
-+--------------+----------------------------------------------------------------------------------------+
-|  x           |                                                 da base de dados de caracteres Unicode.|
+|              |                                                 da base de dados de caracteres Unicode.|
 +--------------+----------------------------------------------------------------------------------------+
 
 **I**
