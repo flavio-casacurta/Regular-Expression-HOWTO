@@ -74,7 +74,9 @@ mais convenientes. Se o programa contém uma grande quantidade de expressões
 regulares, ou reutiliza as mesmas em vários locais, então pode valer a pena 
 recolher todas as definições em um lugar, em uma seção de código que compila todas
 as REs antes do uso. Para dar um exemplo da biblioteca padrão, aqui está um extrato
-de ``xmllib.py``::
+de ``xmllib.py``
+
+::
 
 ref = re.compile( ... )
 entityref = re.compile( ... )
