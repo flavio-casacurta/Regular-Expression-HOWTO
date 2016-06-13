@@ -121,17 +121,22 @@ Para corresponder com um ``$`` literal, use ``\$`` ou coloque-o dentro de uma cl
 caracteres, como em ``[$]``.
 
 
-**\A**
+**\\A**
 
-Corresponde apenas com o início da string. Quando não estiver em modo MULTILINE, \A
-e ^ são efetivamente a mesma coisa. No modo MULTILINE, eles são diferentes: \A continua a
-corresponder apenas com o início da string, mas ^ pode corresponder com qualquer localização de dentro da string, que seja posterior a um caractere nova linha.
+Corresponde apenas com o início da string. Quando não estiver em modo MULTILINE, ``\A``
+e ``^`` são efetivamente a mesma coisa. No modo MULTILINE, eles são diferentes: \A continua a
+corresponder apenas com o início da string, mas ^ pode corresponder com qualquer localização de dentro da string, que
+seja posterior a um caractere nova linha.
 
-\Z
+
+**\\Z**
+
 Corresponde apenas ao final da string.
 
-\b
-Borda de palavra. Esta é uma afirmação de "largura zero" que corresponde apenas ao
+
+**\\b**
+
+Borda de palavra. Esta é uma afirmação de ``largura zero`` que corresponde apenas ao
 início ou ao final de uma palavra. Uma palavra é definida como uma sequência de
 caracteres alfanuméricos, de modo que o fim de uma palavra é indicado por espaços
 em branco ou um caractere não alfanumérico.
