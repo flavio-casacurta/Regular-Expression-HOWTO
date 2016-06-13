@@ -10,7 +10,8 @@ cada linha dentro da string, imediatamente após cada nova linha. Da mesma
 forma, o metacaractere ``$`` corresponde tanto ao final da string e ao final de cada linha
 (imediatamente antes de cada nova linha).
 
-**S DOTALL **
+**S DOTALL**
+
 Faz o caractere especial '.' corresponder com qualquer caractere que seja, incluindo o
 nova linha; sem esta flag, '.' irá corresponder a qualquer coisa, exceto o nova linha.
 
