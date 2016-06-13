@@ -124,8 +124,8 @@ caracteres, como em ``[$]``.
 **\\A**
 
 Corresponde apenas com o início da string. Quando não estiver em modo MULTILINE, ``\A``
-e ``^`` são efetivamente a mesma coisa. No modo MULTILINE, eles são diferentes: \A continua a
-corresponder apenas com o início da string, mas ^ pode corresponder com qualquer localização de dentro da string, que
+e ``^`` são efetivamente a mesma coisa. No modo MULTILINE, eles são diferentes: ``\A`` continua a
+corresponder apenas com o início da string, mas ``^`` pode corresponder com qualquer localização de dentro da string, que
 seja posterior a um caractere nova linha.
 
 
