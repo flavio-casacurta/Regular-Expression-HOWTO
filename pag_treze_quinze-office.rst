@@ -103,11 +103,12 @@ RE a ser usada é ``^From``.
 >>> print re.search('^From', 'Reciting From Memory')
 None
 
+
 **$**
 
-Corresponde ao fim de uma linha, que tanto é definido como o fim de uma string, ou
+Corresponde ao fim de uma linha, que tanto é definido como o fim de uma string, ou qualquer local seguido por um
+caractere de nova linha.
 
-qualquer local seguido por um caractere de nova linha.
 >>> print re.search('}$', '{block}')
 <_sre.SRE_Match object at 0x...>
 >>> print re.search('}$', '{block} ')
@@ -116,10 +117,12 @@ None
 <_sre.SRE_Match object at 0x...>
 
 
-Para corresponder com um '$' literal, use '\$' ou coloque-o dentro de uma classe de
-caracteres, como em [$].
+Para corresponder com um ``$`` literal, use ``\$`` ou coloque-o dentro de uma classe de
+caracteres, como em ``[$]``.
 
-\A
+
+**\A**
+
 Corresponde apenas com o início da string. Quando não estiver em modo MULTILINE, \A
 e ^ são efetivamente a mesma coisa. No modo MULTILINE, eles são diferentes: \A continua a
 corresponder apenas com o início da string, mas ^ pode corresponder com qualquer localização de dentro da string, que seja posterior a um caractere nova linha.
