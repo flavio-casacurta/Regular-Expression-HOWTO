@@ -38,7 +38,7 @@ de ler é ?
 >>> charref = re.compile(r"""
     &[#]             # Início a uma referência a uma entidade numérica
     (
-     0[0-7]+       # Formato Octal
+       0[0-7]+       # Formato Octal
      | [0-9]+        # Formato Decimal
      | x[0-9a-fA-F]+ # Formato Hexadecimal
     )
@@ -62,39 +62,49 @@ Até agora, cobrimos apenas uma parte dos recursos das expressões regulares.
 Nesta seção, vamos abordar alguns metacaracteres novos, e como usar grupos para
 recuperar partes do texto que teve correspondência.
 
-Mais Metacaracteres¶
+Mais Metacaracteres
+-------------------
+
 Existem alguns metacaracteres que nós ainda não vimos. A maioria deles serão referenciados
 nesta seção.
-Alguns dos metacaracteres restantes a serem discutidos são como uma afirmação de "largura zero" (zero-width assertions). Eles
+
+Alguns dos metacaracteres restantes a serem discutidos são como uma afirmação de ``largura zero`` (zero-width assertions). Eles
 não fazem com que o mecanismo avance pela string; ao contrário, eles não consomem
-nenhum caractere, e simplesmente tem sucesso ou falha. Por exemplo, \b é
+nenhum caractere, e simplesmente tem sucesso ou falha. Por exemplo, ``\b`` é
 uma afirmação de que a posição atual está localizada nas bordas de uma palavra; a
-posição não é alterada de nenhuma maneira por \b. Isto significa que afirmações de "largura zero"
+posição não é alterada de nenhuma maneira por ``\b``. Isto significa que afirmações de ``largura zero``
 nunca devem ser repetidas, porque se elas combinam uma vez em um
 determinado local, elas podem, obviamente, combinar um número infinito de
 vezes.
 
-|
-Alternância, ou operador "or". Se A e B são expressões regulares, A|B irá
-corresponder com qualquer string que corresponder com A ou B. | tem uma prioridade muito baixa,
-a fim de fazê-lo funcionar razoavelmente quando você está alternando entre strings de
-vários caracteres. Crow|Servo irá corresponder tanto com Crow quanto com Servo, e não com Cro,
-'w' ou 'S', e ervo.
-Para corresponder com um '|' literal, use \|, ou coloque ele dentro de uma classe de
-caracteres, como em [|].
 
-^
-Corresponde ao início de linha. A menos que a flag MULTILINE tinha sido definida,
+**|**
+
+Alternância, ou operador ``or``. Se ``A`` e ``B`` são expressões regulares, ``A|B`` irá
+corresponder com qualquer string que corresponder com ``A`` ou ``B``. ``|`` tem uma prioridade muito baixa,
+a fim de fazê-lo funcionar razoavelmente quando você está alternando entre strings de
+vários caracteres. ``Crow|Servo`` irá corresponder tanto com ``Crow`` quanto com ``Servo``, e não com ``Cro``,
+``w`` ou ``S``, e ``ervo``.
+
+Para corresponder com um ``|`` literal, use ``\|``, ou coloque ele dentro de uma classe de
+caracteres, como em ``[|]``.
+
+
+**^**
+
+Corresponde ao início de linha. A menos que a flag MULTILINE tenha sido definida,
 isso só irá corresponder ao início da string. No modo MULTILINE, isso também
 corresponde imediatamente após cada nova linha de dentro da string.
-Por exemplo, para ter correspondência com a palavra 'From' apenas no início de uma linha, a
-RE a ser usada é ^From.
+Por exemplo, para ter correspondência com a palavra ``From`` apenas no início de uma linha, a
+RE a ser usada é ``^From``.
+
 >>> print re.search('^From', 'From Here to Eternity')
 <_sre.SRE_Match object at 0x...>
 >>> print re.search('^From', 'Reciting From Memory')
 None
 
-$
+**$**
+
 Corresponde ao fim de uma linha, que tanto é definido como o fim de uma string, ou
 
 qualquer local seguido por um caractere de nova linha.
