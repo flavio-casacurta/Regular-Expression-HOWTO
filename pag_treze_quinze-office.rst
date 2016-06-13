@@ -10,18 +10,20 @@ cada linha dentro da string, imediatamente após cada nova linha. Da mesma
 forma, o metacaractere ``$`` corresponde tanto ao final da string e ao final de cada linha
 (imediatamente antes de cada nova linha).
 
-**S DOTALL**
 
-Faz o caractere especial '.' corresponder com qualquer caractere que seja, incluindo o
-nova linha; sem esta flag, '.' irá corresponder a qualquer coisa, exceto o nova linha.
+**S - DOTALL**
 
-U
-UNICODE
-Faz \w, \W, \b, \B, \d, \D, \s e \S dependentes das propriedades dos caracteres
+Faz o caractere especial ``.`` corresponder com qualquer caractere que seja, incluindo o
+nova linha; sem esta flag, ``.`` irá corresponder a qualquer coisa, exceto o nova linha.
+
+
+**U - UNICODE**
+
+Faz ``\\w``, ``\\W``, ``\\b``, ``\\B``, ``\\d``, ``\\D``, ``\\s`` e ``\\S`` dependentes das propriedades dos caracteres
 Unicode do banco de dados.
 
-X
-VERBOSE
+**X - VERBOSE**
+
 Esta flag permite escrever expressões regulares mais legíveis,
 permitindo mais flexibilidade na maneira de formatá-la. Quando esta flag
 é especificada, o espaço em branco dentro da string RE é ignorado, exceto quando o
@@ -32,27 +34,30 @@ mecanismo; os comentários são marcados por um "#" que não está nem em uma cl
 caracteres nem precedido por uma barra invertida não "escapada".
 Por exemplo, aqui está uma RE que usa re.VERBOSE; veja, o quanto mais fácil
 de ler é ?
-charref = re.compile(r"""
-&[#]             # Início a uma referência a uma entidade numérica
-(
-   0[0-7]+       # Formato Octal
- | [0-9]+        # Formato Decimal
- | x[0-9a-fA-F]+ # Formato Hexadecimal
-)                
-;                # ponto vírgula final
-""", re.VERBOSE)
 
+>>> charref = re.compile(r"""
+    &[#]             # Início a uma referência a uma entidade numérica
+    (
+     0[0-7]+       # Formato Octal
+     | [0-9]+        # Formato Decimal
+     | x[0-9a-fA-F]+ # Formato Hexadecimal
+    )
+     ;                # ponto vírgula final
+     """, re.VERBOSE)
 
 Sem o "verbose" definido, A RE iria se parecer como isto:
-charref = re.compile("&#(0[0-7]+"
-                     "|[0-9]+"
-                     "|x[0-9a-fA-F]+);")
+
+>>> charref = re.compile("&#(0[0-7]+"
+                         "|[0-9]+"
+                         "|x[0-9a-fA-F]+);")
 
 No exemplo acima, a concatenação automática de strings literais em Python foi
 usada para quebrar a RE em partes menores, mas ainda é mais difícil de entender
-do que a versão que usa re.VERBOSE.
+do que a versão que usa ``re.VERBOSE``.
 
-Mais Poder dos Padrões ¶
+Mais Poder dos Padrões
+----------------------
+
 Até agora, cobrimos apenas uma parte dos recursos das expressões regulares.
 Nesta seção, vamos abordar alguns metacaracteres novos, e como usar grupos para
 recuperar partes do texto que teve correspondência.
