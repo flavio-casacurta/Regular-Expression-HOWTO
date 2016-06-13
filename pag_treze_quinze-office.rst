@@ -19,7 +19,7 @@ nova linha; sem esta flag, ``.`` irá corresponder a qualquer coisa, exceto o no
 
 **U - UNICODE**
 
-Faz ``\\w``, ``\\W``, ``\\b``, ``\\B``, ``\\d``, ``\\D``, ``\\s`` e ``\\S`` dependentes das propriedades dos caracteres
+Faz ``\w``, ``\W``, ``\b``, ``\B``, ``\d``, ``\D``, ``\s`` e ``\S`` dependentes das propriedades dos caracteres
 Unicode do banco de dados.
 
 **X - VERBOSE**
