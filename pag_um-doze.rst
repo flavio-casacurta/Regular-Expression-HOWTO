@@ -537,7 +537,7 @@ criação de programas que levam em conta as diferenças linguísticas. Por exem
 francês, que você gostaria de ser capaz de escrever ``\w+`` para corresponder com palavras, mas ``\w`` corresponde apenas com a
 classe de caracteres ``[A-Za-z]``; ele não vai corresponder com ``é`` ou ``ç``. Se o sistema estiver configurado corretamente e
 o idioma francês estiver selecionado, determinadas funções C vão dizer ao programa que ``é`` também deve ser considerada
-como uma letra. Definir a flag ``LOCALE``` no momento de compilar uma expressão regular fará com que o objeto compilado resultante
+como uma letra. Definir a flag ``LOCALE`` no momento de compilar uma expressão regular fará com que o objeto compilado resultante
 use essas funções de C para ``\w``; isso causa lentidão, mas também permite que ``\w+`` corresponda com as palavras em francês,
 caso seja necessário.
 
