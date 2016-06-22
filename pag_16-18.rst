@@ -42,7 +42,9 @@ Frequentemente é necessário obter mais informações do que apenas se a RE
 teve correspondência ou não. As expressões regulares são muitas vezes utilizadas para
 dissecar strings escrevendo uma RE dividida em vários subgrupos que correspondem a
 diferentes componentes de interesse. Por exemplo, uma linha de cabeçalho RFC-822
-é dividida em um nome de cabeçalho e um valor, separados por um ``:``, como essa::
+é dividida em um nome de cabeçalho e um valor, separados por um ``:``, como essa:
+
+::
 
 From: author@example.com
 User-Agent: Thunderbird 1.5.0.9 (X11/20061227)
