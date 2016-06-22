@@ -46,10 +46,10 @@ diferentes componentes de interesse. Por exemplo, uma linha de cabeçalho RFC-82
 
 ::
 
-From: author@example.com
-User-Agent: Thunderbird 1.5.0.9 (X11/20061227)
-MIME-Version: 1.0
-To: editor@example.com
+    From: author@example.com
+    User-Agent: Thunderbird 1.5.0.9 (X11/20061227)
+    MIME-Version: 1.0
+    To: editor@example.com
 
 Isto pode ser gerenciado ao escrever uma expressão regular que corresponde com uma
 linha inteira de cabeçalho, e tem um grupo que corresponde ao nome do cabeçalho, e
