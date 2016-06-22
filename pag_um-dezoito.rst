@@ -683,3 +683,131 @@ início ou ao final de uma palavra. Uma palavra é definida como uma sequência 
 caracteres alfanuméricos, de modo que o fim de uma palavra é indicado por espaços
 em branco ou um caractere não alfanumérico.
 
+O exemplo a seguir corresponde a ``class`` apenas quando é a palavra exata; ele
+não irá corresponder quando for contido dentro de uma outra palavra.
+
+>>>
+>>> p = re.compile(r'\bclass\b')
+>>> print p.search('no class at all')
+<_sre.SRE_Match object at 0x...>
+>>> print p.search('the declassified algorithm')
+None
+>>> print p.search('one subclass is')
+None
+
+Há duas sutilezas você deve lembrar ao usar essa sequência especial. Em primeiro
+lugar, esta é a pior colisão entre strings literais do Python e sequências de expressão
+regular. Nas strings literais do Python, ``\b`` é o caractere backspace, o valor ASCII 8. Se
+você não estiver usando strings cruas (raw), então Python irá converter o ``\b`` em um
+backspace e sua RE não irá funcionar da maneira que você espera. O exemplo a
+seguir parece igual a nossa RE anterior, mas omite o ``r`` na frente da string RE.
+
+>>>
+>>> p = re.compile('\bclass\b')
+>>> print p.search('no class at all')
+None
+>>> print p.search('\b' + 'class' + '\b')
+<_sre.SRE_Match object at 0x...>
+
+Além disso, dentro de uma classe de caracteres, onde não há nenhum uso para esta
+afirmação, ``\b`` representa o caractere backspace, para compatibilidade com strings
+literais do Python.
+
+**\\B**
+
+Outra afirmação de ``largura zero``; isto é o oposto de ``\b``, correspondendo apenas quando
+a posição corrente não é de uma borda de palavra.
+
+Agrupamento
+-----------
+
+Frequentemente é necessário obter mais informações do que apenas se a RE
+teve correspondência ou não. As expressões regulares são muitas vezes utilizadas para
+dissecar strings escrevendo uma RE dividida em vários subgrupos que correspondem a
+diferentes componentes de interesse. Por exemplo, uma linha de cabeçalho RFC-822
+é dividida em um nome de cabeçalho e um valor, separados por um ``:``, como essa:
+
+::
+
+    From: author@example.com
+    User-Agent: Thunderbird 1.5.0.9 (X11/20061227)
+    MIME-Version: 1.0
+    To: editor@example.com
+
+Isto pode ser gerenciado ao escrever uma expressão regular que corresponde com uma
+linha inteira de cabeçalho, e tem um grupo que corresponde ao nome do cabeçalho, e
+um outro grupo, que corresponde ao valor do cabeçalho.
+Os grupos são marcados pelos metacaracteres ``(`` e ``)``. ``(`` e ``)`` têm muito do
+mesmo significado que eles têm em expressões matemáticas; eles agrupam as
+expressões contidas dentro deles, e você pode repetir o conteúdo de um grupo com
+um qualificador de repetição, como ``*``, ``+``, ``?``, ou ``{m,n}``. Por exemplo, ``(ab)*`` irá
+corresponder a zero ou mais repetições de ``ab``.
+
+>>>
+>>> p = re.compile('(ab)*')
+>>> print p.match('ababababab').span()
+(0, 10)
+
+Grupos indicados com ``(`` e ``)`` também capturam o índice inicial e final do texto que
+eles correspondem; isso pode ser obtido por meio da passagem de um argumento para
+``group()``, ``start()``, ``end()``, e ``span()``. Os grupos são numerados começando com
+0. O grupo 0 está sempre presente; é toda a RE, logo, todos os métodos MatchObject têm
+o grupo 0 como seu argumento padrão. Mais tarde veremos como expressar
+grupos que não capturam a extensão de texto com a qual eles correspondem.
+
+>>>
+>>> p = re.compile('(a)b')
+>>> m = p.match('ab')
+>>> m.group()
+'ab'
+>>> m.group(0)
+'ab'
+
+Subgrupos são numerados a partir da esquerda para a direita, de forma crescente a partir de 1.
+Os grupos podem ser aninhados; para determinar o número, basta contar os
+caracteres de abertura de parêntese - ``(``, indo da esquerda para a direita.
+
+>>>
+>>> p = re.compile('(a(b)c)d')
+>>> m = p.match('abcd')
+>>> m.group(0)
+'abcd'
+>>> m.group(1)
+'abc'
+>>> m.group(2)
+'b'
+
+``group()`` pode receber vários números de grupos de uma vez, e nesse caso
+ele irá retornar uma tupla contendo os valores correspondentes desses grupos.
+
+>>>
+>>> m.group(2,1,2)
+('b', 'abc', 'b')
+
+O método ``groups()`` retorna uma tupla contendo as strings de todos os subgrupos, de
+1 até o último. Independente da quantidade de subgrupos informada.
+
+>>>
+>>> m.groups()
+('abc', 'b')
+
+Referências anteriores em um padrão permitem que você especifique que o conteúdo
+de um grupo capturado anteriormente também deve ser encontrado na posição
+atual na sequência. Por exemplo, ``\1`` terá sucesso se o conteúdo exato do grupo 1
+puder ser encontrado na posição atual, e falhar caso contrário. Lembre-se que as strings
+literais do Python também usam a barra invertida seguida por números para
+permitir a inclusão de caracteres arbitrários em uma string, por isso certifique-se de usar
+strings cruas (raw) ao incorporar referências anteriores em uma RE.
+
+Por exemplo, a seguinte RE detecta palavras duplicadas em uma string.
+
+>>>
+>>> p = re.compile(r'(\b\w+)\s+\1')
+>>> p.search('Paris in the the spring').group()
+'the the'
+
+Referências anteriores como esta não são, geralmente, muito úteis apenas para fazer pesquisa percorrendo
+uma string — existem alguns formatos de texto que repetem dados dessa forma —
+mas em breve você irá descobrir que elas são muito úteis para realizar substituições de
+strings.
+
