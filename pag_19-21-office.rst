@@ -91,7 +91,7 @@ módulo ``imaplib``::
                               r' (?P<zonen>[-+])(?P<zoneh>[0-9][0-9])(?P<zonem>[0-9][0-9])'
                               r'"')
 
-É obviamente muito mais fácil fazer referência a m.group('zonem'), do que ter que se
+É obviamente muito mais fácil fazer referência a ``m.group('zonem')``, do que ter que se
 lembrar de capturar o grupo 9.
 
 A sintaxe para referências anteriores em uma expressão, tal como ``(...)\1``, faz referência ao número do grupo. Existe,
