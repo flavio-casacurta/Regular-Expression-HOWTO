@@ -85,11 +85,11 @@ lembrança, em vez de ter que lembrar de números. Aqui está um exemplo de RE u
 módulo ``imaplib``::
 
     InternalDate = re.compile(r'INTERNALDATE "'
-     r'(?P<day>[ 123][0-9])-(?P<mon>[A-Z][a-z][a-z])-'
-     r'(?P<year>[0-9][0-9][0-9][0-9])'
-     r' (?P<hour>[0-9][0-9]):(?P<min>[0-9][0-9]):(?P<sec>[0-9][09])'
-     r' (?P<zonen>[-+])(?P<zoneh>[0-9][0-9])(?P<zonem>[0-9][0-9])'
-     r'"')
+                              r'(?P<day>[ 123][0-9])-(?P<mon>[A-Z][a-z][a-z])-'
+                              r'(?P<year>[0-9][0-9][0-9][0-9])'
+                              r' (?P<hour>[0-9][0-9]):(?P<min>[0-9][0-9]):(?P<sec>[0-9][09])'
+                              r' (?P<zonen>[-+])(?P<zoneh>[0-9][0-9])(?P<zonem>[0-9][0-9])'
+                              r'"')
 
 É obviamente muito mais fácil fazer referência a m.group('zonem'), do que ter que se
 lembrar de capturar o grupo 9.
