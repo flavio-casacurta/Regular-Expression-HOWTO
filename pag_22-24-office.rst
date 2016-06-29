@@ -78,7 +78,7 @@ parte da lista resultante. Se maxsplit é diferente de zero, um número de divis
 ``maxsplit`` será executado.
 
 Você pode limitar o número de divisões feitas, passando um valor para maxsplit.
-Quando ``maxsplit`` é diferente de zero, um determinado número de divisões maxsplit será executado, e o
+Quando ``maxsplit`` é diferente de zero, um determinado número de divisões ``maxsplit`` será executado, e o
 restante da string é retornado como o elemento final da lista. No exemplo a seguir, o
 delimitador é qualquer sequência de caracteres não alfanuméricos.
 
@@ -115,20 +115,26 @@ primeiro argumento, mas é, em determinadas circunstâncias, a mesma.
 >>> re.split('[\W]+', 'Words, words, words.', 1)
 ['Words', 'words, words.']
 
-Busca e Substituição¶
+
+Busca e Substituição
+--------------------
+
 Outra tarefa comum é encontrar todas as combinações para um padrão e substituí-las
-por uma string diferente. O método sub() recebe um valor de substituição, que pode
+por uma string diferente. O método ``sub()`` recebe um valor de substituição, que pode
 ser uma string ou uma função, e a string a ser processada.
 
-.sub(replacement, string[, count=0])
+**.sub(replacement, string[, count=0])**
+
 Retorna a string obtida substituindo as ocorrências mais à esquerda não sobrepostas
-da RE em ‘string’ pela substituição 'replacement'. Se o padrão não for encontrado, a
-string é retornada inalterada.
-O argumento opcional 'count' é o número máximo de ocorrências do padrão a ser
-substituído; 'count' deve ser um número inteiro não negativo. O valor padrão 0
+da RE em ``string`` pela substituição ``replacement``. Se o padrão não for encontrado, a
+``string`` é retornada inalterada.
+
+O argumento opcional ``count`` é o número máximo de ocorrências do padrão a ser
+substituído; ``count`` deve ser um número inteiro não negativo. O valor padrão ``0``
 significa para substituir todas as ocorrências.
-Aqui está um exemplo simples do uso do método sub(). Ele substitui nomes de
-cores pela palavra 'colour':
+
+Aqui está um exemplo simples do uso do método ``sub()``. Ele substitui nomes de
+cores pela palavra ``colour``:
 
 >>>
 >>> p = re.compile( '(blue|white|red)')
