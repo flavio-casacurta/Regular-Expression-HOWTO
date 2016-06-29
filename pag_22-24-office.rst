@@ -7,7 +7,7 @@ incorretas::
 
 A primeira tentativa acima tenta excluir bat, exigindo que o primeiro caractere da
 extensão não é um b. Isso é errado, porque o padrão também não corresponde
-``foo.bar``.
+``foo.bar``::
 
     .*[.]([^b]..|.[^a].|..[^t])$
 
@@ -16,7 +16,7 @@ exigindo que uma das seguintes situações corresponda: o primeiro caractere da 
 segundo caractere não é ``a``; ou o terceiro caractere não é ``t``. Isso aceita
 ``foo.bar`` e rejeita ``autoexec.bat``, mas requer uma extensão de três letras e não
 aceitará um nome de arquivo com uma extensão de duas letras, tal como ``sendmail.cf``.
-Nós iremos complicar o padrão novamente em um esforço para corrigi-lo.
+Nós iremos complicar o padrão novamente em um esforço para corrigi-lo::
 
     .*[.]([^b].?.?|.[^a]?.?|..?[^t]?)$
 
@@ -56,9 +56,9 @@ maneiras, usando os seguintes métodos padrão:
 +================+=====================================================================================================+
 |split()         | Divide a string em uma lista, dividindo-a onde quer que haja correspondência com a RE               |
 +----------------+-----------------------------------------------------------------------------------------------------+
-sub()            | Encontra todas as substrings que correspondem com a RE e faz a substituição por uma string diferente|
+|sub()           | Encontra todas as substrings que correspondem com a RE e faz a substituição por uma string diferente|
 +----------------+-----------------------------------------------------------------------------------------------------+
-subn()           | Faz a mesma coisa que sub(), mas retorna a nova string e o número de substituições                  |
+|subn()          | Faz a mesma coisa que sub(), mas retorna a nova string e o número de substituições                  |
 +----------------+-----------------------------------------------------------------------------------------------------+
 
 Dividindo as Strings
