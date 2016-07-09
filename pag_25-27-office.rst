@@ -4,7 +4,7 @@
 >>> p.sub( 'colour', 'blue socks and red shoes', count=1)
 'colour socks and red shoes'
 
-O método subn() faz o mesmo trabalho, mas retorna uma tupla com duas informações; contém uma string
+O método ``subn()`` faz o mesmo trabalho, mas retorna uma tupla com duas informações; contém uma string
 com novo valor e o número de substituições que foram realizadas:
 
 >>>
