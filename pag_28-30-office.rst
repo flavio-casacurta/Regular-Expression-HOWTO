@@ -122,7 +122,9 @@ N.T.
     http://aurelio.net/regex/guia/
 
 Alguns bons recursos para testar suas RE s, são:
+
     http://www.pyregex.com/
+
     http://tools.lymas.com.br/regexp_br.php#
 
 
